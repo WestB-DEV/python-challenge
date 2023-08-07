@@ -1,10 +1,11 @@
 #1 import os and the csv file in quesiton
-import os
 import csv
-#read and write filepath
-csvpath = os.path.join("Resources", "budget_data.csv")
-csv_out= os.path.join("analysis", "budget_analysis.txt")
+from pathlib import Path
 
+#read and write filepath
+script_directory = Path(__file__).resolve().parent
+csvpath = script_directory / "Resources" / "budget_data.csv"
+csv_out = script_directory / "analysis" / "budget_analysis.txt"
 #make the variables for the for loop that will return the final answers
 #Your first variable will include the total months in the CSV 
 months=0
